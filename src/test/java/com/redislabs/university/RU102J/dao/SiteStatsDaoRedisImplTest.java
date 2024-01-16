@@ -50,7 +50,7 @@ public class SiteStatsDaoRedisImplTest {
     }
 
     @Test
-    public void findById() {
+    public void findByIzd() {
         MeterReading r1 = generateMeterReading(1);
         SiteStatsDao dao = new SiteStatsDaoRedisImpl(jedisPool);
         dao.update(r1);
