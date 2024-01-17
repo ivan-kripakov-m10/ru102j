@@ -1,17 +1,17 @@
 package com.redislabs.university.RU102J.dao;
 
 import com.redislabs.university.RU102J.HostPort;
-import com.redislabs.university.RU102J.JedisDaoTestBase;
 import com.redislabs.university.RU102J.TestKeyManager;
 import com.redislabs.university.RU102J.api.MeterReading;
-import org.junit.*;
+import java.time.ZonedDateTime;
+import java.util.List;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-
-import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -53,7 +53,6 @@ public class FeedDaoRedisImplTest {
     }
 
     // Challenge #6
-    @Ignore
     @Test
     public void testBasicInsertReturnsRecent() {
         FeedDao dao = new FeedDaoRedisImpl(jedisPool);
